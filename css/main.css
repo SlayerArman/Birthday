@@ -252,6 +252,43 @@ button{
     transform: translateX(-50%);
 }
 
+.hero__decorations{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-decoration{
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+}
+
+.hero-decoration img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero-decoration--flag-left,
+.hero-decoration--flag-right{
+    top: -5px;
+    width: clamp(150px, 25vw, 350px);
+    opacity: 0.9;
+}
+
+.hero-decoration--flag-left{
+    left: -30px;
+    transform: rotate(-8deg);
+}
+
+.hero-decoration--flag-right{
+    right: -30px;
+    transform: scaleX(-1) rotate(-8deg);
+}
+
 .celebration{
     padding-top: 6rem;
 }
