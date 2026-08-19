@@ -371,3 +371,43 @@ button{
 .site-footer p{
     margin: 0;
 }
+
+@media (max-width: 800px){
+    .celebration__content,
+    .memories__gallery{
+        grid-template-columns: 1fr;
+    }
+
+    .memory-placeholder{
+        aspect-ratio: 16 / 10;
+    }
+}
+
+@media (max-width: 660px){
+    .navigation{
+        width: min(
+            calc(100% - 2rem),
+            var(--container-width)
+        );
+    }
+
+    .section{
+        width: min(
+            calc(100% - 2rem),
+            var(--container-width)
+        );
+        padding-block: 5rem;
+    }
+
+    .hero{
+        padding-inline: 1rem;
+    }
+
+    .hero__title{
+        font-size: clamp(3.5rem, 19vw, 6rem);
+    }
+
+    .hero__glow{
+        width: 250px;
+    }
+}
