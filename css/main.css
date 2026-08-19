@@ -360,3 +360,14 @@ button{
     font-family: var(--font-display);
     font-style: italic;
 }
+
+.site-footer{
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+.site-footer p{
+    margin: 0;
+}
