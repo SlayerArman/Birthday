@@ -289,6 +289,95 @@ button{
     transform: scaleX(-1) rotate(-8deg);
 }
 
+.hero-decoration--hat{
+    top: 18%;
+    left: 50%;
+    width: clamp(65px, 9vw, 130px);
+    transform:
+        translateX(100px)
+        rotate(12deg);
+}
+
+.hero-decoration--balloon-left{
+    left: 4%;
+    bottom: 17%;
+    width: clamp(65px, 10vw, 110px);
+    transform: rotate(-8deg);
+    animation: balloonFloatLeft 3s ease-in-out infinite;
+}
+
+.hero-decoration--balloon-right{
+    right: 4%;
+    top: 27%;
+    width: clamp(65px, 10vw, 110px);
+    transform: rotate(8deg);
+    animation: balloonFloatRight 3.4s ease-in-out infinite;
+}
+
+@keyframes balloonFloatLeft{
+    0%,
+    100%{
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50%{
+        transform: translateY(-10px) rotate(-3deg);
+    }
+}
+
+@keyframes balloonFloatRight{
+    0%,
+    100%{
+        transform: translateY(0) rotate(8deg);
+    }
+
+    50%{
+        transform: translateY(-12px) rotate(13deg);
+    }
+}
+
+.hero-decoration--flower-left{
+    left: 20%;
+    top: 28%;
+    width: 24px;
+    animation: flowerFloat 4s ease-in-out infinite;
+}
+
+.hero-decoration--flower-right{
+    right: 18%;
+    bottom: 27%;
+    width: 20px;
+    animation:
+        flowerFloat 4.5s
+        ease-in-out
+        1s
+        infinite;
+}
+
+@keyframes flowerFloat{
+    0%,
+    100%{
+        transform: translate(0) rotate(0deg);
+    }
+
+    50%{
+        transform: translateY(-8px) rotate(15deg);
+    }
+}
+
+.hero-decoration--simley{
+    left: 7%;
+    bottom: 6%;
+    width: clamp(55px, 8vw, 100px);
+    transform: rotate(-8deg);
+}
+
+.hero-decoration--bottom{
+    right: 0;
+    bottom: -5px;
+    width: clamp(70px, 10vw, 120px);
+}
+
 .celebration{
     padding-top: 6rem;
 }
@@ -426,7 +515,7 @@ button{
     }
 }
 
-@media (max-width: 660px){
+@media (max-width: 600px){
     .navigation{
         width: min(
             calc(100% - 2rem),
@@ -452,5 +541,71 @@ button{
 
     .hero__glow{
         width: 250px;
+    }
+
+    .hero-decoration--flag-left,
+    .hero-decoration--flag-right{
+        width: 150px;
+    }
+
+    .hero-decoration--flag-left{
+        left: -45px;
+    }
+
+    .hero-decoration--flag-right{
+        right: -45px;
+    }
+
+    .hero-decoration--hat{
+        top: 20%;
+        transform:
+        translateX(75px)
+        rotate(12deg);
+    }
+
+    .hero-decoration--balloon-left{
+        left: -12px;
+        bottom: 18px;
+        width: 65px;
+    }
+
+    .hero-decoration--balloon-right{
+        right: -12px;
+        top: 30%;
+        width: 65px;
+    }
+
+    .hero-decoration--flower-left{
+        left: 8%;
+        top: 25%;
+    }
+
+    .hero-decoration--flower-right{
+        right: 8%;
+        bottom: 25%;
+    }
+
+    .hero-decoration--smiley{
+        left: 2%;
+        bottom: 4%;
+        width: 60px;
+    }
+
+    .hero-decoration--bottom{
+        width: 75px;
+    }
+}
+
+@media (preferences-reduced-motion: reduce){
+    html{
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
