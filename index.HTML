@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta
-        name="description"
-        content="A special birthday celebration.">
+    <meta name="description" content="A special birthday celebration.">
     
         <title>Happy Birthday</title>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ght@400;500;600;700&family=Playfair+Display:wwght@500;600;600&display=swap">
         <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <header class="site-header">
         <nav class="navigation" aria-label="Main navigation">
-            <a class="navigation__logo" href="/">
-                Birthday
+            <a class="navigation__logo" href="#home">
+                ✦ Birthday
             </a>
 
             <button
@@ -29,7 +29,156 @@
         </nav>
     </header>
     <main>
-        <h1>Happy Birthday</h1>
+        <section class="hero" id="home">
+            <div class="hero__glow hero__glow--one"></div>
+            <div class="hero__glow hero__glo--to"></div>
+
+            <div class="hero__content">
+                <p class="hero__eyebrow">
+                    A special day for someone special
+                </p>
+
+                <h1 class="hero__title">
+                    Happy
+                    <span>Birthday!</span>
+                </h1>
+
+                <p class="hero__description">
+                    Today is all about celebrating
+                    beautiful memories, happines,
+                    and another wonderful year.
+                </p>
+
+                <a class="hero__button" href="#celebration">
+                    Start the celebration
+                    <span aria-hidden="true">↓</span>
+                </a>
+            </div>
+
+            <div class="hero__scroll" aria-hidden>
+                <span></span>
+            </div>
+        </section>
+
+        <section class="celebration section" id="celebration">
+            <div class="section-heading">
+                <p class="section-heading__eyebroww">
+                    ✦ Celebrate
+                </p>
+
+                <h2 class="section-heading__title">
+                    A day worth
+                    <span>remembering</span>
+                </h2>
+
+                <p class="section-heading__description">
+                    Every birthday is reminder of all the
+                    wonderful moments that make life special
+                </p>
+            </div>
+
+            <div class="celebration__content">
+                <article class="birthday-card">
+                    <div class="birthday-card__icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        Another beautiful year
+                    </h3>
+
+                    <p>
+                        May this year bring countless reasons
+                        to smile and memories worth keeping.
+                    </p>
+                </article>
+
+                <article class="birthday-card">
+                    <div class="birthday-card__icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        More moments
+                    </h3>
+
+                    <p>
+                        Here's to new adventures, neww dreams,
+                        and all the little moments in between.
+                    </p>
+                </article>
+
+                <aricle class="birthday-card">
+                    <div class="birthday-card__icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        Endless happiness
+                    </h3>
+
+                    <p>
+                        Wishing you ayear filled with happiness,
+                        laughter, and people who care about you. 
+                    </p>
+                </aricle>
+            </div>
+        </section>
+
+        <section class="memories section" id="memories">
+            <div class="section-heading">
+                <p class="section-heading__eyebrow">
+                    ✦ Memories
+                </p>
+
+                <h2 class="section-heading__title">
+                    Beautiful
+                    <span>moments</span>
+                </h2>
+            </div>
+
+            <div class="memories__gallery">
+                <div class="memory-placeholder">
+                    <span>Photo</span>
+                </div>
+
+                <div class="memory-placeholder">
+                    <span>Photo</span>
+                </div>
+
+                <div class="memory-placeholder">
+                    <span>Photo</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="message section" id="messge">
+            <div class="message__card">
+                <p class="section-heading__eyebrow">
+                    ✦ A little message
+                </p>
+
+                <h2>
+                    From the heart
+                </h2>
+
+                <p>
+                    A special birthday message will go here.
+                    This section is for a personal message.
+                    I will add it later.
+                </p>
+
+                <span class="message__signature">
+                    With love ♡
+                </span>
+            </div>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <p> Made with <span aria-hidden="ture">♡</span>
+        for a special birthday.
+        </p>
+    </footer>
 </body>
 </html>
