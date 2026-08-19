@@ -246,13 +246,55 @@ button{
     transform: translateX(-50%);
 }
 
-.celebration__content,
-.memories__gallery,
-.message__contetnt{
-    max-width: 1100px;
-    margin: 3rem auto 0;
+.celebration{
+    padding-top: 6rem;
 }
-.site-footer{
-    padding: 2rem 5%;
+
+.celebration__content{
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1rfr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.birthday-card{
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: var(--shadow-soft);
     text-align: center;
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
 }
+
+.birthday-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 25px 70px rgba(120, 50, 70, 0.12);
+}
+
+.birthday-card__icon{
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    font-size: 1.4rem;
+}
+
+.birthday-card h3{
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+}
+
+.birthday-card p{
+    margin: 0.8rem 0 0;
+    color: var(--color-text-muted);
+}
+
