@@ -298,3 +298,65 @@ button{
     color: var(--color-text-muted);
 }
 
+.memories__gallery{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.memory-placeholder{
+    aspect-ratio: 4 / 5;
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-medium);
+    background:
+        linear-gradient(
+            145deg,
+            #f5d9df,
+            #f9ebee
+        );
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.message{
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+}
+
+.message__card{
+    max-width: 850px;
+    margin-inline: auto;
+    padding: clamp(2.5rem, 6vww, 5rem);
+    border-radius: var(--radius-large);
+    background:
+        linear-gradient(
+            145deg,
+            #f8dfe5,
+            #fff4f5
+        );
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+}
+
+.message__card h2{
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+}
+
+.message__card > p:not(.section-heading__eyebroww){
+    max-width: 600px;
+    margin: 1.5rem auto;
+    color: var(--color-text-muted);
+}
+
+.message__signature{
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-style: italic;
+}
