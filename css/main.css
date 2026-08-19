@@ -99,6 +99,50 @@ button{
     backdrop-filter: blur(10px);
 }
 
+.section{
+    width: min(
+        calc(100% - 3rem),
+        var(--container-width)
+    );
+    margin-inline: auto;
+    padding-block: 8rem;
+}
+
+.section-heading{
+    max-width: 700px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.section-heading__eyebroww,
+.hero__eyebrow{
+    margin: 0 0 1rem;
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.section-heading__title{
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem,6vww, 4.5rem);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.section-heading__title span{
+    color: var(--color-primary);
+    font-style: italic;
+}
+
+.section-heading__description{
+    max-width: 580px;
+    margin: 1.5rem auto 0;
+    color: var(--color-text-muted);
+}
+
 .hero,
 .celebration,
 .memories,
