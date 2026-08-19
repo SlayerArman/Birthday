@@ -1,6 +1,6 @@
 :root{
     --color-background: #fff8f8;
-    -color-surface: #ffffff;
+    --color-surface: #ffffff;
     --color-primary: #c85c78;
     --color-primary-dark: #9f3f5b;
     --color-secondary: #ff59df;
@@ -12,7 +12,7 @@
     --font-body: "DM Sans", sans-serif;
     --font-display: "Playfair Display", serif;
 
-    --container-wwidth: 1150px;
+    --container-width: 1150px;
 
     --radius-small: 12px;
     --radius-medium: 24px;
@@ -73,7 +73,7 @@ button{
 .navigation{
     width: min(
         calc(100% - 2rem),
-        var(--container-wwidth)
+        var(--container-width)
     );
     margin-inline: auto;
     display: flex;
@@ -120,7 +120,7 @@ button{
     text-align: center;
 }
 
-.section-heading__eyebroww,
+.section-heading__eyebrow,
 .hero__eyebrow{
     margin: 0 0 1rem;
     color: var(--color-primary);
@@ -133,7 +133,7 @@ button{
 .section-heading__title{
     margin: 0;
     font-family: var(--font-display);
-    font-size: clamp(2.5rem,6vww, 4.5rem);
+    font-size: clamp(2.5rem,6vw, 4.5rem);
     font-weight: 600;
     line-height: 1.1;
 }
@@ -188,7 +188,7 @@ button{
 }
 
 .hero__button{
-    display: inline-block;
+    display: inline-flex;
     align-items: center;
     gap: 0.8rem;
     margin-top: 2rem;
@@ -264,6 +264,7 @@ button{
     position: absolute;
     pointer-events: none;
     user-select: none;
+    will-change: transform;
 }
 
 .hero-decoration img{
@@ -274,108 +275,152 @@ button{
 
 .hero-decoration--flag-left,
 .hero-decoration--flag-right{
-    top: -5px;
-    width: clamp(150px, 25vw, 350px);
+    top: -12px;
+    width: clamp(180px, 23vw, 330px);
     opacity: 0.9;
-}
+    transform-origin: top center;
+    animation: decorationSway 5s ease-in-out infinite;
 
 .hero-decoration--flag-left{
-    left: -30px;
-    transform: rotate(-8deg);
+    left: -25px;
 }
 
 .hero-decoration--flag-right{
     right: -30px;
-    transform: scaleX(-1) rotate(-8deg);
+    animation-delay: -2.5s;
+    transform: scaleX(-1);
 }
 
 .hero-decoration--hat{
-    top: 18%;
-    left: 50%;
-    width: clamp(65px, 9vw, 130px);
-    transform:
-        translateX(100px)
-        rotate(12deg);
+    top: 16%;
+    left: calc(50% + 190px);
+    width: clamp(65px, 8vw, 105px);
+    transform: rotate(12deg);
+    animation: hatFloat 4s ease-in-out infinite;
 }
 
 .hero-decoration--balloon-left{
-    left: 4%;
-    bottom: 17%;
-    width: clamp(65px, 10vw, 110px);
+    left: clamp(12px, 7vw, 100px);
+    top: 42%;
+    width: clamp(65px, 9vw, 105px);
     transform: rotate(-8deg);
-    animation: balloonFloatLeft 3s ease-in-out infinite;
+    animation: balloonLeft 4s ease-in-out infinite;
 }
 
 .hero-decoration--balloon-right{
-    right: 4%;
-    top: 27%;
-    width: clamp(65px, 10vw, 110px);
+    right: clamp(12px, 7vw, 100px);
+    top: 30%;
+    width: clamp(65px, 9vw, 105px);
     transform: rotate(8deg);
-    animation: balloonFloatRight 3.4s ease-in-out infinite;
+    animation: balloonRight 4.5s ease-in-out infinite;
 }
 
-@keyframes balloonFloatLeft{
+.hero-decoration--flower-left{
+    left: 22%;
+    top: 31%;
+    width: clamp(18px, 2vw, 28px);
+    animation: flowerFloat 4s ease-in-out infinite;
+}
+
+.hero-decoration--flower-right{
+    right: 22%;
+    bottom: 27%;
+    width: clamp(18px, 2vw, 28px);
+    animation:
+        flowerFloat 4.5s ease-in-out -1.5s infinite;
+}
+
+.hero-decoration--smiley{
+    left: clamp(25px, 7vw, 90px);
+    bottom: 12%;
+    width: clamp(55px, 7vw, 90px);
+    transform: rotate(-8deg);
+    animation: smileyFloat 4s ease-in-out infinite;
+}
+
+.hero-decoration--bottom{
+    right: 0;
+    bottom: -5px;
+    width: clamp(90px, 12vw, 150px);
+    transform-origin: bottom right;
+    animation: bottomSway 5s ease-in-out infinite;
+}
+
+@keyframes decorationSway{
+    0%,
+    100%{
+        transform: rotate(-2deg);
+    }
+
+    50%{
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes hatFloat{
+    0%,
+    100%{
+        transform: translateY(0) rotate(12deg);
+    }
+
+    50%{
+        transform: translateY(-8px) rotate(16deg);
+    }
+}
+
+@keyframes balloonLeft{
     0%,
     100%{
         transform: translateY(0) rotate(-8deg);
     }
 
     50%{
-        transform: translateY(-10px) rotate(-3deg);
+        transform: translateY(-18px) rotate(-3deg);
     }
 }
 
-@keyframes balloonFloatRight{
+@keyframes ballonRight{
     0%,
     100%{
         transform: translateY(0) rotate(8deg);
     }
 
     50%{
-        transform: translateY(-12px) rotate(13deg);
+        transform: translateY(-20px) rotate(13deg);
     }
-}
-
-.hero-decoration--flower-left{
-    left: 20%;
-    top: 28%;
-    width: 24px;
-    animation: flowerFloat 4s ease-in-out infinite;
-}
-
-.hero-decoration--flower-right{
-    right: 18%;
-    bottom: 27%;
-    width: 20px;
-    animation:
-        flowerFloat 4.5s
-        ease-in-out
-        1s
-        infinite;
 }
 
 @keyframes flowerFloat{
     0%,
     100%{
-        transform: translate(0) rotate(0deg);
+        transform: translateY(-0) rotate(15deg);
     }
 
     50%{
-        transform: translateY(-8px) rotate(15deg);
+        transform: translateY(-10px) rotate(15deg);
     }
 }
 
-.hero-decoration--simley{
-    left: 7%;
-    bottom: 6%;
-    width: clamp(55px, 8vw, 100px);
-    transform: rotate(-8deg);
+@keyframes smileyFloat{
+    0%,
+    100%{
+        transform: translateY(0px) rotate(-8deg);
+    }
+
+    50%{
+        transform: translateY(-12px) rotate(-2deg);
+    }
 }
 
-.hero-decoration--bottom{
-    right: 0;
-    bottom: -5px;
-    width: clamp(70px, 10vw, 120px);
+@keyframes bottomSway{
+    0%,
+    100%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(-3deg);
+    }
 }
 
 .celebration{
@@ -385,7 +430,7 @@ button{
 .celebration__content{
     display: grid;
     grid-template-columns:
-        repeat(3, minmax(0, 1rfr));
+        repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
     margin-top: 4rem;
 }
@@ -462,7 +507,7 @@ button{
 .message__card{
     max-width: 850px;
     margin-inline: auto;
-    padding: clamp(2.5rem, 6vww, 5rem);
+    padding: clamp(2.5rem, 6vw, 5rem);
     border-radius: var(--radius-large);
     background:
         linear-gradient(
@@ -481,7 +526,7 @@ button{
     line-height: 1.1;
 }
 
-.message__card > p:not(.section-heading__eyebroww){
+.message__card > p:not(.section-heading__eyebrow){
     max-width: 600px;
     margin: 1.5rem auto;
     color: var(--color-text-muted);
@@ -533,6 +578,7 @@ button{
 
     .hero{
         padding-inline: 1rem;
+        overflow: hidden;
     }
 
     .hero__title{
@@ -545,7 +591,7 @@ button{
 
     .hero-decoration--flag-left,
     .hero-decoration--flag-right{
-        width: 150px;
+        width: 145px;
     }
 
     .hero-decoration--flag-left{
@@ -557,38 +603,40 @@ button{
     }
 
     .hero-decoration--hat{
-        top: 20%;
-        transform:
-        translateX(75px)
-        rotate(12deg);
+        top: 19%;
+        left: auto;
+        right: 12%;
+        width: 62px;
     }
 
     .hero-decoration--balloon-left{
-        left: -12px;
-        bottom: 18px;
-        width: 65px;
+        left: -8px;
+        top: 43%;
+        width: 62px;
     }
 
     .hero-decoration--balloon-right{
-        right: -12px;
-        top: 30%;
-        width: 65px;
+        right: -8px;
+        top: 31%;
+        width: 62px;
     }
 
     .hero-decoration--flower-left{
         left: 8%;
-        top: 25%;
+        top: 27%;
+        width: 18px;
     }
 
     .hero-decoration--flower-right{
         right: 8%;
         bottom: 25%;
+        width: 18px;
     }
 
     .hero-decoration--smiley{
-        left: 2%;
-        bottom: 4%;
-        width: 60px;
+        left: 4%;
+        bottom: 7%;
+        width: 55px;
     }
 
     .hero-decoration--bottom{
@@ -596,7 +644,7 @@ button{
     }
 }
 
-@media (preferences-reduced-motion: reduce){
+@media (prefers-reduced-motion: reduce){
     html{
         scroll-behavior: auto;
     }
