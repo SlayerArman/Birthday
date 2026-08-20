@@ -119,12 +119,17 @@
 
             <div class="celebration__content">
                 <article class="birthday-card" birthday-card--featured>
-                    <div class="birthday-card__image">
+                    <button
+                            class="image-trigger birthday-card__image"
+                            type="button"
+                            aria-label="Open birthday photo"
+                            data-lightbox="assets/images/birthday/birthday-person.png"
+                            data-lightbox-alt="Birthday celebration">
                         <img
                             src="assets/images/birthday/birthday-person.png"
-                            alt="Birthday celebration"
+                            alt=""
                             loading="lazy">
-                    </div>
+                    </button>
 
                     <div class="birthday-card__content">
                         <p class="birthday-card__eyebrow">
@@ -187,17 +192,43 @@
             </div>
 
             <div class="memories__gallery">
-                <div class="memory-placeholder">
-                    <span>Photo</span>
-                </div>
 
-                <div class="memory-placeholder">
-                    <span>Photo</span>
-                </div>
+                <button
+                    class="image-trigger memory-card memory-card--large"
+                    type="button"
+                    aria-label="Open birthday memory"
+                    data-lightbox="assets/images/birthday/birthday-person.png"
+                    data-lightbox-alt="Birthday memory">
+                    <img
+                        src="assets/images/birthday/birthday-person.png"
+                        alt=""
+                        loading="lazy">
+                </button>
 
-                <div class="memory-placeholder">
-                    <span>Photo</span>
-                </div>
+                <button
+                    class="image-trigger memory-card"
+                    type="button"
+                    aria-label="Open love decoration"
+                    data-lightbox="assets/images/decorations/love.png"
+                    data-lightbox-alt="Love decoration">
+                    <img
+                        src="assets/images/decorations/love.png"
+                        alt=""
+                        loading="lazy">
+                </button>
+
+                <button
+                    class="image-trigger memory-card"
+                    type="button"
+                    aria-label="Open heart decoration"
+                    data-lightbox="assets/images/decorations/heart.png"
+                    data-lightbox-alt="Heart decoration">
+                    <img
+                        src="assets/images/decorations/heart.png"
+                        alt=""
+                        loading="lazy">
+                </button>
+
             </div>
         </section>
 
@@ -229,5 +260,35 @@
         for a special birthday.
         </p>
     </footer>
+
+    <div
+        class="lightbox"
+        id="lightbox"
+        aria-hidden="true">
+
+        <div
+            class="lightbox_backdrop"
+            data-lightbox></div>
+
+        <div
+            class="lightbox__dialog"
+            role="dialog"
+            aria-model="true"
+            aria-label="Image preview">
+        
+            <button
+                class="lightbox__close"
+                type="button"
+                aria-label="Close image preview"
+                data-lightbox-close>
+                ×
+            </button>    
+
+            <img
+                class="lightbox__image"
+                src=""
+                alt="">
+        </div>
+    </div>
 </body>
 </html>
