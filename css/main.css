@@ -481,6 +481,48 @@ button{
     color: var(--color-text-muted);
 }
 
+.birthday-card--featured{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(180px, 0.8fr) 1.2fr;
+    gap: 2rem;
+    align-items: center;
+    text-align: left;
+    overflow: hidden;
+    padding: 0;
+}
+
+.birthday-card__image{
+    height: 100%;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.birthday-card__image img{
+    display: block;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease;   
+}
+
+.birthday-card--featured:hover .birthday-card__image img{
+    transform: scale(1.03);
+}
+
+.birthday-card__content{
+    padding: 2rem 2rem 2rem 0;
+}
+
+.birthday-card__eyebrow{
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
 .memories__gallery{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -647,6 +689,20 @@ button{
 
     .hero-decoration--bottom{
         width: 75px;
+    }
+
+    .birthday-card--featured{
+        grid-template-columns: 1fr;
+        gap: 0;
+        text-align: center;
+    }
+
+    .birthday-card__image{
+        min-height: 240px;
+    }
+
+    .birthday-card__content{
+        padding: 1.5rem;
     }
 }
 
