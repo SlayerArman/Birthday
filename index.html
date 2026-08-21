@@ -232,8 +232,17 @@
             </div>
         </section>
 
-        <section class="message section" id="message">
+        <section
+            class="message section"
+            id="message">
+
             <div class="message__card">
+                <div class="message__decoration" aria-hidden="true">
+                    <img
+                        src="assets/images/letter/heart_letter.png"
+                        alt="">
+                </div>
+
                 <p class="section-heading__eyebrow">
                     ✦ A little message
                 </p>
@@ -242,15 +251,17 @@
                     From the heart
                 </h2>
 
-                <p>
-                    A special birthday message will go here.
-                    This section is for a personal message.
-                    I will add it later.
+                <p class="message_-intro">
+                    There's something special waiting for you.
                 </p>
 
-                <span class="message__signature">
-                    With love ♡
-                </span>
+                <button
+                    class="message__button"
+                    type="button"
+                    id="openLetter">
+                    Open your letter
+                    <span aria-hidden="true">♡</span>
+                </button>
             </div>
         </section>
     </main>
@@ -288,6 +299,64 @@
                 class="lightbox__image"
                 src=""
                 alt="">
+        </div>
+    </div>
+
+    <div
+        class="letter"
+        id="letter"
+        aria-hidden="true">
+    
+        <div
+            class="letter__backdrop"
+            data-letter-close></div>
+        
+        <div
+            class="letter__dialog"
+            role="dialog"
+            aira-model="true"
+            aria-labelledby="letterTitle">
+        
+            <button
+                class="letter__close"
+                type="button"
+                aria-label="Close birthday letter"
+                data-letter-close>
+                ×
+            </button>
+
+            <div class="letter__image">
+                <img
+                    src="assets/images/birthday/mewmew.gif"
+                    alt="">
+            </div>
+
+            <p class="letter__eyebrow">
+                ✦ With love
+            </p>
+
+            <h2 id="letterTitle">
+                Happy Birthday!
+            </h2>
+
+            <div class="letter__message">
+                <p>
+                    Today is a celebration of you,
+                    the memories we've made,
+                    and all the beautiful moments
+                    still waiting ahead.
+                </p>
+
+                <p>
+                    I hope this year brings you
+                    happiness, laughter and
+                    countless reasons to smile.
+                </p>
+            </div>
+
+            <p class="letter__signature">
+                With love ♡
+            </p>
         </div>
     </div>
 
