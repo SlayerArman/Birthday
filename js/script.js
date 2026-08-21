@@ -6,31 +6,40 @@ const letter = document.querySelector("#letter");
 const openLetterButton = document.querySelector("#openLetter");
 
 function openLetter() {
+    if (!letter) return;
+
     letter.classList.add("is-open");
     letter.setAttribute("aria-hidden", "false");
+
     document.body.style.overflow = "hidden";
 }
 
 function closeLetter() {
+    if (!letter) return;
+
     letter.classList.remove("is-open");
     letter.setAttribute("aria-hidden", "true");
 
     document.body.style.overflow = "";
 }
 
-openLetterButton.addEventListener("click", openLetter);
+if (openLetterButton){
+    openLetterButton.addEventListener(
+        "click",
+        openLetter
+    );
+}
 
-openLetterButton.forEach((button) => {
-    button.addEventListener("click", closeLetter);
-});
-
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape"){
-        closeLetter();
-    }
+letterCloseButtons.forEach((button) => {
+    button.addEventListener(
+        "click",
+        closeLetter
+    );
 });
 
 function openLightbox(src, alt){
+    if (!lightbox || !lightboxImage) return;
+
     lightboxImage.src = src;
     lightboxImage.alt = alt || "";
 
@@ -41,29 +50,34 @@ function openLightbox(src, alt){
 }
 
 function closeLightbox() {
+    if (!lightbox || !lightboxImage) return;
+
     lightbox.classList.remove("is-open");
     lightbox.setAttribute("aria-hidden", "true");
 
     document.body.style.overflow = "";
 
     lightboxImage.src = "";
+    lightboxImage.alt ="";
 }
 
 lightboxTriggers.forEach((trigger) => {
     trigger.addEventListener("click", () => {
         openLightbox(
-            trigger.dataser.lightbox,
+            trigger.dataset.lightbox,
             trigger.dataset.lightboxAlt
         );
     });
 });
 
 lightboxCloseButtons.forEach((button) => {
-    button.addEventListener("click", closeLightbox);
+    button.addEventListener("click",
+        closeLightbox
+    );
 });
 
 document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape"){
+    if (event.key !== "Escape") return;
         closeLightbox();
-    }
+        closeLetter();
 });
