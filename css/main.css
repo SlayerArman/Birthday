@@ -828,6 +828,33 @@ button{
         grid-row: auto;
         aspect-ratio: 4 / 3;
     }
+
+    .message__card{
+        padding: 1.5rem;
+    }
+
+    .message__decoration{
+        width: 70px;
+        top: -10px;
+        right: -10px;
+    }
+
+    .message__decoration{
+        width: 70px;
+        top: -10px;
+        right: -10px;
+    }
+
+    .letter__dialog{
+        width: calc(100vw - 2rem);
+        max-height: 90vh;
+        padding: 2rem 1.25rem 1.5rem;
+    }
+
+    .letter__image{
+        width: 90px;
+        height: 90px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -917,7 +944,7 @@ button{
     inset: 0;
     background: rgba(20, 12, 25, 0.78);
     backdrop-filter: blur(10px);
-    -wwebkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     cursor: pointer;
 }
 
