@@ -525,26 +525,29 @@ button{
 
 .memories__gallery{
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    grid-template-rows: repeat(2, minmax(180px, 1fr));
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(0, 1fr);
+    grid-template-rows:
+        repeat(2, minmax(180px, 1fr));
     gap: 1rem;
     margin-top: 3rem;
 }
 
 .memory-card{
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    width: 100%;
     min-width: 0;
     min-height: 0;
-    margin: 0;
-    aspect-ratio: 4 / 5;
+    padding: 0;
     overflow: hidden;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-medium);
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--color-secondary);
     box-shadow: var(--shadow-soft);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .memory-card--decorative img{
@@ -562,12 +565,13 @@ button{
     height: 100%;
     object-fit: cover;
     object-position: center;
-    padding: 0;
-    transition: transform 500ms ease;
+    transition:
+        transform 500ms ease,
+        filter 500ms ease;
 }
 
 .memory-card:hover img{
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
 .message{
@@ -590,6 +594,11 @@ button{
     overflow: hidden;
     text-align: center;
     box-shadow: var(--shadow-soft);
+}
+
+.message-card:focus-visible{
+    outline: 3px solid var(--color-primary);
+    outline-offset: 4px;
 }
 
 .message__card h2{
@@ -826,15 +835,15 @@ button{
 
     .memories__gallery{
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: none;
         gap: 1rem;
-        margin-top: 2rem;
     }
 
     .memory-card,
     .memory-card--large{
         grid-row: auto;
-        aspect-ratio: 220px;
+        aspect-ratio: 4 / 5;
+        min-height: 0;
     }
 
     .message__card{
