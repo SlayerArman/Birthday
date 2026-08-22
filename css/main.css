@@ -209,6 +209,25 @@ button{
     font-style: italic;
 }
 
+.hero__date{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1.25rem 0 0;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercases; 
+}
+
+.hero__date::before,
+.hero__date::after{
+    content: "✦";
+    font-size: 0.65rem;
+    opacity: 0.7;
+}
+
 .hero__description{
     max-width: 550px;
     margin: 2rem auto 0;
@@ -513,9 +532,8 @@ button{
 .birthday-card--featured{
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: minmax(180px, 0.8fr) 1.2fr;
-    gap: 2rem;
-    align-items: center;
+    grid-template-columns: minmax(80px, 0.9fr) minmax(0, 1.1fr);
+    min-height: 390px;
     text-align: left;
     overflow: hidden;
     padding: 0;
@@ -523,7 +541,8 @@ button{
 
 .birthday-card__image{
     height: 100%;
-    min-height: 200px;
+    height: 100%;
+    min-height: 390px;
     overflow: hidden;
 }
 
@@ -536,11 +555,14 @@ button{
 }
 
 .birthday-card--featured:hover .birthday-card__image img{
-    transform: scale(1.03);
+    transform: scale(1.025);
 }
 
 .birthday-card__content{
-    padding: 2rem 2rem 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2rem, 5vw, 4rem);
 }
 
 .birthday-card__eyebrow{
@@ -550,6 +572,18 @@ button{
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-accent);
+}
+
+.birthday-card__content h3{
+    max-width: 520px;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.05;
+}
+
+.birthday-card__content > p:last-child{
+    max-width: 500px;
 }
 
 .memories__gallery{
@@ -586,8 +620,8 @@ button{
 .memory-card img{
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: block;
     object-position: center;
     transition:
         transform 500ms ease,
@@ -782,7 +816,13 @@ button{
     }
 
     .hero__title{
-        font-size: clamp(3.5rem, 19vw, 6rem);
+        font-size: clamp(3.2rem, 16vw, 6rem);
+        line-height: 0.95;
+    }
+
+    .hero__description{
+        max-width: 34rem;
+        margin-inline: auto;
     }
 
     .hero__glow{
@@ -850,11 +890,17 @@ button{
     }
 
     .birthday-card__image{
-        min-height: 240px;
+        height: min(72vww, 40px);
+        min-height: 280px;
     }
 
     .birthday-card__content{
-        padding: 1.5rem;
+        align-items: center;
+        padding: 2rem, 1.5rem, 2.25rem;
+    }
+
+    .birthday-card__content h3{
+        font-size: clamp(2rem, 10vw, 2.7rem);
     }
 
     .memories__gallery{
@@ -901,7 +947,7 @@ button{
         position: fixed;
         top: 0;
         right: 0;
-        width: min(82vww, 320px);
+        width: min(82vw, 320px);
         height: 100dvh;
         padding:
             6rem
