@@ -23,9 +23,20 @@
             <button
                 class="navigation__menu"
                 type="button"
-                aria-label="Open menu">
-                ☰
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
+
+            <div class="navigation__links" id="mobileMenu">
+                <a href="#home">Home</a>
+                <a href="#celebration">Celebrate</a>
+                <a href="#memories">Memories</a>
+                <a href="#message">Message</a>
+            </div>
         </nav>
     </header>
     <main>
@@ -356,7 +367,7 @@
         <div
             class="letter__dialog"
             role="dialog"
-            aira-modal="true"
+            aria-modal="true"
             aria-labelledby="letterTitle">
         
             <button
