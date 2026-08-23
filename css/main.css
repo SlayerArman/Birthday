@@ -1021,10 +1021,21 @@ button{
     *,
     *::before,
     *::after{
+        scroll-behavior: auto !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
 }
 
 .message__decoration{
@@ -1214,4 +1225,50 @@ button{
 
 .navigation__menu.is-open span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+}
+
+.memory-card{
+    transition:
+        transform 250ms ease,
+        box-shadow 250ms ease;
+}
+
+.memory-card:hover{
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+.memory-card:active{
+    transform: translateY(-1px) scale(0.99);
+}
+
+.birthday-card:not(.birthday-card--featured){
+    transition:
+        transform 250ms ease,
+        box-shadow 250ms ease;
+}
+
+.birthday-card:not(.birthday-card--featured):hover{
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+.birthday-card:not(.birthday-card--featured):active{
+    transform: translateY(-1px);
+}
+
+.navigation__menu{
+    min-width: 38px;
+    min-height: 38px;
+}
+
+.navigation__links a{
+    transition:
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.navigation__links a:hover{
+    color: var(--color-primary);
+    transform: translateX(4px);
 }
