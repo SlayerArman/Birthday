@@ -700,7 +700,7 @@ button{
     visibility: hidden;
     transition:
         opacity 250ms ease,
-        visibilty 250ms ease;
+        visibility 250ms ease;
 }
 
 .lightbox.is-open{
@@ -1049,7 +1049,7 @@ button{
     visibility: hidden;
     transition:
         opacity 250ms ease,
-        visibilty 250ms ease;
+        visibility 250ms ease;
 }
 
 .letter.is-open{
