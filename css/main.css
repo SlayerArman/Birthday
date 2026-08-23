@@ -933,6 +933,7 @@ button{
         max-height: 88svh;
         overflow-y: auto;
         padding: 2rem 1.25rem;
+        border-radius: 24px;
     }
 
     .letter__image{
@@ -1074,9 +1075,10 @@ button{
 .letter__dialog{
     position: relative;
     z-index: 1;
-    width: min(600px, 92vw);
+    max-height: 88svh;
+    width: min(92vw, 620px);
     overflow-y: auto;
-    padding: 2.5rem;
+    padding: 2.5re, clamp(1.25rem, 5vw, 3rem);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-large);
     background: var(--color-surface);
@@ -1141,10 +1143,21 @@ button{
 }
 
 .letter__message{
+    width: min(100%, 480px);
+    margin: 0 auto;
     max-width: 480px;
     margin-inline: auto;
     color: var(--color-text-muted);
     line-height: 1.8;
+}
+
+.letter__message p{
+    margin: 0 0 1rem;
+    line-height: 1.75;
+}
+
+.letter__message p:last-child{
+    margin-bottom: 0;
 }
 
 .letter__message p + p{
@@ -1152,9 +1165,10 @@ button{
 }
 
 .letter__signature{
-    margin-top: 1.5rem;
-    font-family: "Playfair Display", serif;
-    font-size: 1.3rem;
+    margin-top: 1.75rem;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-style: italic;
     color: var(--color-primary);
 }
 
