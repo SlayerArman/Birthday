@@ -604,6 +604,7 @@ button{
     display: block;
     width: 100%;
     margin: 0 0 1rem;
+    margin-bottom: 1;
     padding: 0;
     overflow: hidden;
     border: 1px solid var(--color-border);
@@ -783,17 +784,6 @@ button{
     outline-offset: 4px;
 }
 
-@media (max-width: 800px){
-    .celebration__content,
-    .memories__gallery{
-        grid-template-columns: 1fr;
-    }
-
-    .memory-placeholder{
-        aspect-ratio: 16 / 10;
-    }
-}
-
 @media (max-width: 600px){
     .navigation{
         width: min(
@@ -850,15 +840,15 @@ button{
     }
 
     .hero-decoration--balloon-left{
-        left: -8px;
+        left: 4px;
         top: 43%;
-        width: 62px;
+        width: 58px;
     }
 
     .hero-decoration--balloon-right{
-        right: -8px;
+        right: 4px;
         top: 31%;
-        width: 62px;
+        width: 58px;
     }
 
     .hero-decoration--flower-left{
@@ -874,9 +864,14 @@ button{
     }
 
     .hero-decoration--smiley{
-        left: 4%;
-        bottom: 7%;
-        width: 55px;
+        left: 6%;
+        bottom: 8%;
+        width: 52px;
+    }
+
+    .hero__button{
+        min-height: 48px;
+        padding-inline: 1.35rem;
     }
 
     .hero-decoration--bottom{
@@ -938,7 +933,15 @@ button{
 
     .letter__image{
         width: min(125px, 38vw);
-        height: 90px;
+        height: auto;
+        width: auto;
+    }
+
+    .letter__image img{
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 
     .letter__message{
