@@ -507,29 +507,30 @@ button{
 
 .celebration__content{
     display: grid;
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
     margin-top: 4rem;
 }
 
 .celebration__content > .birthday-card:not(.birthday-card--featured){
-    min-height: 260px;
+    min-height: 230px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .birthday-card{
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.75rem;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-medium);
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--color-surface);
     box-shadow: var(--shadow-soft);
-    text-align: center;
-    transition:
-        transform 200ms ease,
-        box-shadow 200ms ease;
 }
 
 .birthday-card:hover{
@@ -538,14 +539,15 @@ button{
 }
 
 .birthday-card__icon{
-    width: 55px;
-    height: 55px;
-    display: grid;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.25rem;
     place-items: center;
     margin: 0 auto 1.5rem;
     border-radius: 50%;
-    background: var(--color-secondary);
-    color: var(--color-primary);
+    background: var(--color-accent);
     font-size: 1.4rem;
 }
 
@@ -575,6 +577,10 @@ button{
 .birthday-card__image{
     height: 320px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
 }
 
 .birthday-card__image img{
@@ -582,7 +588,7 @@ button{
     width: 100%; 
     height: 100%;
     object-fit: cover;
-    transition: transform 500ms ease;   
+    object-position: center;
 }
 
 .birthday-card--featured:hover .birthday-card__image img{
@@ -917,7 +923,11 @@ button{
     }
 
     .celebration__content > .birthday-card:not(.birthday-card--featured) {
-        min-height: 220px;
+        min-height: 210px;
+    }
+
+    .celebration__content{
+        grid-template-columns: 1fr;
     }
 
     .birthday-card__content h3{
@@ -955,7 +965,6 @@ button{
     .letter__image{
         width: min(125px, 38vw);
         height: auto;
-        width: auto;
     }
 
     .letter__image img{
