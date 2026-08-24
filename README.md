@@ -15,7 +15,6 @@
 4. Change Name and Date.
 
 ```javascript
-// Open celebration overlay
 button.addEventListener("click", () => {
     openCelebrationOverlay(card.dataset.celebration);
 });
@@ -23,13 +22,11 @@ button.addEventListener("click", () => {
 
 ## Built With 🛠️
 
-- **HTML5** — Page structure and semantic markup
-- **CSS3** — Styling, responsive layouts, animations, and effects
-- **JavaScript** — Interactions, navigation, overlays, and lightbox functionality
-- **Google Fonts** — DM Sans and Playfair Display
+- **HTML5**
+- **CSS3**
+- **JavaScript**
 
 ```css
-/* Smooth overlay animation */
 .celebration-overlay.is-open {
     opacity: 1;
     visibility: visible;
@@ -56,22 +53,6 @@ Birthday/
         ├── memories/
         └── ui/
 ```
-
-## Features ✨
-
-- 🎉 Interactive birthday hero section
-- 🎈 Animated birthday decorations
-- 📱 Responsive layout for desktop, tablet, and mobile
-- 🍔 Mobile hamburger navigation
-- 🎁 Celebration cards with interactive overlays
-- 💌 Interactive birthday letter
-- 🖼️ Memories gallery with image lightbox
-- ❤️ Custom birthday-themed assets
-- ✦ Smooth scrolling and transitions
-- 🎨 Decorative floating elements and animations
-- ⌨️ Keyboard support for interactive overlays
-- ♿ Reduced-motion support
-- 📱 Touch-friendly mobile interactions
 
 ## Support the Project ⭐
 
