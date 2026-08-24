@@ -425,42 +425,45 @@
                 With love ♡ Arman Ahmad
             </p>
 
+        </div>
+    </div>
+
+    <div
+        class="celebration-overlay"
+        id="celebrationOverlay"
+        aria-hidden="true">
+
         <div
-            class="celebration-overlay"
-            id="celebrationOverlay"
-            aria-hidden="true">
+            class="celebration-overlay__backdrop"
+            data-celebration-close></div>
 
-            <div
-                class="celebration-overlay__backdrop"
-                data-celebration-close></div>
+        <div
+            class="celebration-overlay__dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="celebrationOverlayTitle">
 
-            <div
-                class="celebration-overlay__dialog"
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="celebrationOverlayTitle">
+            <button
+                class="celebration-overlay__close"
+                type="button"
+                aria-label="Close"
+                data-celebration-close>
+                ×
+            </button>
 
-                <button
-                    class="celebration-overlay__close"
-                    type="button"
-                    aria-label="Close"
-                    data-celebration-close>
-                    ×
-                </button>
+            <img
+                class="celebration-overlay__image"
+                id="celebrationOverlayImage"
+                src=""
+                alt="">
 
-                <img
-                    class="celebration-overlay__image"
-                    id="celebrationOverlayImage"
-                    src=""
-                    alt="">
+            <p class="section-heading__eyebrow">
+                ✦ A little birthday wish
+            </p>
 
-                <p class="section-heading__eyebrow">
-                    ✦ A little birthday wish
-                </p>
+            <h2 id="celebrationOverlayTitle"></h2>
 
-                <h2 id="celebrationOverlayTitle"></h2>
-
-                <p id="celebrationOverlayText"></p>
+            <p id="celebrationOverlayText"></p>
 
         </div>
     </div>
