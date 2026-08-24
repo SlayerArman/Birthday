@@ -17,7 +17,7 @@
     <header class="site-header">
         <nav class="navigation" aria-label="Main navigation">
             <a class="navigation__logo" href="#home">
-                ✦ Sweetie Fox
+                ✦ Evelian
             </a>
 
             <button
@@ -86,7 +86,7 @@
 
                 <h1 class="hero__title">
                     Happy Birthday
-                    <span>Sweetie Fox!</span>
+                    <span>Evelian!</span>
                 </h1>
 
                 <p class="hero__date">
@@ -180,7 +180,7 @@
                     </button>
                 </article>
 
-                <article class="birthday-card birthday-card--interactive" data-celeration="happiness">
+                <article class="birthday-card birthday-card--interactive" data-celebration="happiness">
                     <div class="birthday-card__icon">
                         ✦
                     </div>
@@ -397,12 +397,12 @@
             </div>
 
             <p class="letter__eyebrow">
-                ✦ With love - Sweetie Fox
+                ✦ With love - Evelian
             </p>
 
             <h2 id="letterTitle">
                 Happy Birthday
-                Sweetie Fox!
+                Evelian!
             </h2>
 
             <div class="letter__message">
@@ -425,19 +425,43 @@
                 With love ♡ Arman Ahmad
             </p>
 
-        <img
-            class="celebration-overlay__image"
-            id="celebrationOverlayImage"
-            src=""
-            alt="">
+        <div
+            class="celebration-overlay"
+            id="celebrationOverlay"
+            aria-hidden="true">
 
-            <p class="section-heading__eyebrow">
-                ✦ A little birthday wish
-            </p>
+            <div
+                class="celebration-overlay__backdrop"
+                data-celebration-close></div>
 
-            <h2 id="celebrationOverlayTitle"></h2>
-            
-            <p id="celebrationOverlayText"></p>
+            <div
+                class="celebration-overlay__dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="celebrationOverlayTitle">
+
+                <button
+                    class="celebration-overlay__close"
+                    type="button"
+                    aria-label="Close"
+                    data-celebration-close>
+                    ×
+                </button>
+
+                <img
+                    class="celebration-overlay__image"
+                    id="celebrationOverlayImage"
+                    src=""
+                    alt="">
+
+                <p class="section-heading__eyebrow">
+                    ✦ A little birthday wish
+                </p>
+
+                <h2 id="celebrationOverlayTitle"></h2>
+
+                <p id="celebrationOverlayText"></p>
+
         </div>
     </div>
 
