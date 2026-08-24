@@ -160,7 +160,7 @@
                     </div>
                 </article>
 
-                <article class="birthday-card">
+                <article class="birthday-card birthday-card--interactive" data-celebration="moments">
                     <div class="birthday-card__icon">
                         ♡
                     </div>
@@ -170,12 +170,17 @@
                     </h3>
 
                     <p>
-                        Here's to new adventures. new dreams,
-                        and all the little moments in between.
+                        Every little moment can become
+                        a beautiful memory.
                     </p>
+
+                    <button class="birthday-card__button" type="button">
+                        Discover
+                        <span aria-hidden="true">→</span>
+                    </button>
                 </article>
 
-                <article class="birthday-card">
+                <article class="birthday-card birthday-card--interactive" data-celeration="happiness">
                     <div class="birthday-card__icon">
                         ✦
                     </div>
@@ -185,9 +190,14 @@
                     </h3>
 
                     <p>
-                        Wishing you a year filled with happiness,
-                        laughter and people who care about you.
+                        Wishing you countless smiles,
+                        laughter and wonderful days ahead.
                     </p>
+
+                    <button class="birthday-card__button" type="button">
+                        Discover
+                        <span aria-hidden="true">→</span>
+                    </button>
                 </article>
             </div>
         </section>
@@ -414,6 +424,20 @@
             <p class="letter__signature">
                 With love ♡ Arman Ahmad
             </p>
+
+        <img
+            class="celebration-overlay__image"
+            id="celebrationOverlayImage"
+            src=""
+            alt="">
+
+            <p class="section-heading__eyebrow">
+                ✦ A little birthday wish
+            </p>
+
+            <h2 id="celebrationOverlayTitle"></h2>
+            
+            <p id="celebrationOverlayText"></p>
         </div>
     </div>
 
