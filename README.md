@@ -10,6 +10,7 @@
 ## Controls
 Use **Arrow Keys** ↑↓ & ←→ to move the pointer.
 Press **Enter** ↵ to interact with the elements.
+Press **Esc** to close any popup.
 
 ## How to Edit?
 
