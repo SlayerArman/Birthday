@@ -1,0 +1,76 @@
+@keyframes decorationSway{
+    0%,
+    100%{
+        transform: rotate(-2deg);
+    }
+
+    50%{
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes hatFloat{
+    0%,
+    100%{
+        transform: translateY(0) rotate(12deg);
+    }
+
+    50%{
+        transform: translateY(-8px) rotate(16deg);
+    }
+}
+
+@keyframes balloonLeft{
+    0%,
+    100%{
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50%{
+        transform: translateY(-18px) rotate(-3deg);
+    }
+}
+
+@keyframes balloonRight{
+    0%,
+    100%{
+        transform: translateY(0) rotate(8deg);
+    }
+
+    50%{
+        transform: translateY(-20px) rotate(13deg);
+    }
+}
+
+@keyframes flowerFloat{
+    0%,
+    100%{
+        transform: translateY(-0) rotate(15deg);
+    }
+
+    50%{
+        transform: translateY(-10px) rotate(15deg);
+    }
+}
+
+@keyframes smileyFloat{
+    0%,
+    100%{
+        transform: translateY(0px) rotate(-8deg);
+    }
+
+    50%{
+        transform: translateY(-12px) rotate(-2deg);
+    }
+}
+
+@keyframes bottomSway{
+    0%,
+    100%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(-3deg);
+    }
+}

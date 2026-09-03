@@ -1,0 +1,147 @@
+.birthday-card{
+    padding: 2rem 1.75rem;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-soft);
+}
+
+.birthday-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 25px 70px rgba(120, 50, 70, 0.12);
+}
+
+.birthday-card__icon{
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    place-items: center;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    font-size: 1.4rem;
+}
+
+.birthday-card h3{
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+}
+
+.birthday-card p{
+    margin: 0.8rem 0 0;
+    color: var(--color-text-muted);
+}
+
+.birthday-card--featured{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1fr);
+    width: min(760px, 100%);
+    min-height: 320px;
+    margin-inline: auto;
+    text-align: left;
+    overflow: hidden;
+    padding: 0;
+}
+
+.birthday-card__image{
+    height: 320px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+}
+
+.birthday-card__image img{
+    display: block;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.birthday-card--featured:hover .birthday-card__image img{
+    transform: scale(1.025);
+}
+
+.birthday-card__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2rem, 5vw, 4rem);
+}
+
+.birthday-card__eyebrow{
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.birthday-card__content h3{
+    max-width: 520px;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.05;
+}
+
+.birthday-card__content > p:last-child{
+    max-width: 500px;
+}
+
+.birthday-card:not(.birthday-card--featured){
+    transition:
+        transform 250ms ease,
+        box-shadow 250ms ease;
+}
+
+.birthday-card:not(.birthday-card--featured):hover{
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+.birthday-card:not(.birthday-card--featured):active{
+    transform: translateY(-1px);
+}
+
+.birthday-card__button{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-primary);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 180ms ease,
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.birthday-card__button:hover{
+    background: var(--color-primary);
+    color: white;
+}
+
+.birthday-card__button:active{
+    transform: scale(0.96);
+}

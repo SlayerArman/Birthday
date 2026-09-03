@@ -1,0 +1,221 @@
+.hero{
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    padding: 7rem 1.5rem 5rem;
+    text-align: center;
+}
+
+.hero__content{
+    position: relative;
+    z-index: 2;
+    width: min(100%, 850px);
+}
+
+.hero__title{
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.hero__title span{
+    display: block;
+    color: var(--color-primary);
+    font-style: italic;
+}
+
+.hero__date{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1.25rem 0 0;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase; 
+}
+
+.hero__date::before,
+.hero__date::after{
+    content: "✦";
+    font-size: 0.65rem;
+    opacity: 0.7;
+}
+
+.hero__description{
+    max-width: 550px;
+    margin: 2rem auto 0;
+    color: var(--color-text-muted);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.hero__button{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 12px 30px rgba(200, 92, 120, 0.25);
+    transition:
+        transform 180ms ease,
+        background 190ms ease;
+}
+
+.hero__button:hover{
+    background: var(--color-primary-dark);
+    transform: translateY(-3px);
+}
+
+.hero__glow{
+    position: absolute;
+    width: 350px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+}
+
+.hero__glow--one{
+    top: 10%;
+    left: -10%;
+    background: var(--color-secondary);
+}
+
+.hero__glow--two{
+    right: -10%;
+    bottom: 10%;
+    background: var(--color-accent);
+}
+
+.hero__scroll{
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    width: 22px;
+    height: 36px;
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    transform: translateX(-50%);
+}
+
+.hero__scroll span{
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    width: 4px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--color-primary);
+    transform: translateX(-50%);
+}
+
+.hero__decorations{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-decoration{
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    will-change: transform;
+}
+
+.hero-decoration img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero-decoration--flag-left,
+.hero-decoration--flag-right{
+    top: -12px;
+    width: clamp(180px, 23vw, 330px);
+    opacity: 0.9;
+    transform-origin: top center;
+    animation: decorationSway 5s ease-in-out infinite;
+}
+
+.hero-decoration--flag-left{
+    left: -25px;
+}
+
+.hero-decoration--flag-right{
+    right: -30px;
+    animation-delay: -2.5s;
+    transform: scaleX(-1);
+}
+
+.hero-decoration--hat{
+    top: 16%;
+    left: calc(50% + 190px);
+    width: clamp(65px, 8vw, 105px);
+    transform: rotate(12deg);
+    animation-delay: -1s;
+    animation: hatFloat 4s ease-in-out infinite;
+}
+
+.hero-decoration--balloon-left{
+    left: clamp(12px, 7vw, 100px);
+    top: 42%;
+    width: clamp(65px, 9vw, 105px);
+    transform: rotate(-8deg);
+    animation: balloonLeft 4s ease-in-out infinite;
+}
+
+.hero-decoration--balloon-right{
+    right: clamp(12px, 7vw, 100px);
+    top: 30%;
+    width: clamp(65px, 9vw, 105px);
+    transform: rotate(8deg);
+    animation-delay: -2s;
+    animation: balloonRight 4.5s ease-in-out infinite;
+}
+
+.hero-decoration--flower-left{
+    left: 22%;
+    top: 31%;
+    width: clamp(18px, 2vw, 28px);
+    animation: flowerFloat 4s ease-in-out infinite;
+}
+
+.hero-decoration--flower-right{
+    right: 22%;
+    bottom: 27%;
+    width: clamp(18px, 2vw, 28px);
+    animation-delay: -1.5s;
+    animation:
+        flowerFloat 4.5s ease-in-out -1.5s infinite;
+}
+
+.hero-decoration--smiley{
+    left: clamp(25px, 7vw, 90px);
+    bottom: 12%;
+    width: clamp(55px, 7vw, 90px);
+    transform: rotate(-8deg);
+    animation-delay: -2.5s;
+    animation: smileyFloat 4s ease-in-out infinite;
+}
+
+.hero-decoration--bottom{
+    right: 0;
+    bottom: -5px;
+    width: clamp(90px, 12vw, 150px);
+    transform-origin: bottom right;
+    animation-delay: -1.5s;
+    animation: bottomSway 5s ease-in-out infinite;
+}
