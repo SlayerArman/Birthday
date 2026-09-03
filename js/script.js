@@ -18,6 +18,21 @@ const celebrationOverlayText = document.querySelector("#celebrationOverlayText")
 const celebrationOverlayImage = document.querySelector("#celebrationOverlayImage");
 const celebrationCloseButtons = document.querySelectorAll("[data-celebration-close]");
 
+const keyboardPointer = document.querySelector("#keyboardPointer");
+const keyboardTargets = [
+        "navigation__logo",
+        "navigation__menu",
+        "navigation__links a",
+        "hero__button",
+        ".birthday-card__image",
+        ".birthday-card__button",
+        ".memory-card",
+        ".message__button",
+        ".lightbox__close",
+        ".letter__close",
+        ".celebration-overlay__close"
+];
+
 const celebrationContent = {
     moments: {
         title: "More moments",
@@ -122,3 +137,225 @@ letterCloseButtons.forEach((button) => {
         closeLetter
     );
 });
+
+(function () {
+
+    const pointer = document.getElementById("keyboardPointer");
+
+    if (!pointer) return;
+
+    /* Mobile = completely disabled */
+    if (window.innerWidth <= 600) {
+        pointer.style.display = "none";
+        return;
+    }
+
+    let x = window.innerWidth / 2;
+    let y = window.innerHeight / 2;
+
+    const speed = 20;
+
+
+    function renderPointer() {
+
+        pointer.style.left = x + "px";
+        pointer.style.top = y + "px";
+
+    }
+
+
+    function movePointer(key) {
+
+        if (key === "ArrowLeft") {
+            x -= speed;
+        }
+
+        if (key === "ArrowRight") {
+            x += speed;
+        }
+
+        if (key === "ArrowUp") {
+            y -= speed;
+        }
+
+        if (key === "ArrowDown") {
+            y += speed;
+        }
+
+        const edge = 40;
+
+        if (
+            key === "ArrowDown" &&
+            y >= window.innerHeight - edge
+        ) {
+            window.scrollBy(0, 50);
+        }
+
+        if (
+            key === "ArrowUp" &&
+            y <= edge &&
+            window.scrollY > 0
+        ) {
+            window.scrollBy(0, -50);
+        }
+
+        const radius = 10;
+
+        x = Math.max(
+            radius,
+            Math.min(
+                window.innerWidth - radius,
+                x
+            )
+        );
+
+        y = Math.max(
+            radius,
+            Math.min(
+                window.innerHeight - radius,
+                y
+            )
+        );
+
+        renderPointer();
+        checkInteractionTarget();
+    }
+
+
+    function checkInteractionTarget() {
+    document
+        .querySelectorAll(".keyboard-pointer-hover")
+        .forEach((element) => {
+            element.classList.remove(
+                "keyboard-pointer-hover"
+            );
+        });
+
+    pointer.style.display = "none";
+
+    const element =
+        document.elementFromPoint(x, y);
+
+    pointer.style.display = "block";
+
+    if (!element) return;
+
+    const target =
+        element.closest(
+            "button, a, [role='button'], .memory-card, .birthday-card__image"
+        );
+
+    if (target) {
+        target.classList.add(
+            "keyboard-pointer-hover"
+        );
+    }
+}
+    function interact() {
+        pointer.style.display = "none";
+
+        const element =
+            document.elementFromPoint(x, y);
+
+        pointer.style.display = "block";
+
+        if (!element) return;
+
+        const target =
+            element.closest(
+                "button, a, [role='button'], .memory-card, .birthday-card__image"
+            );
+
+        if (!target) return;
+
+        pointer.classList.add("is-pressed");
+
+        setTimeout(function () {
+            pointer.classList.remove(
+                "is-pressed"
+            );
+        }, 120);
+
+        target.click();
+
+    }
+
+    window.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (window.innerWidth <= 600) return;
+
+
+            if (
+                event.key === "ArrowUp" ||
+                event.key === "ArrowDown" ||
+                event.key === "ArrowLeft" ||
+                event.key === "ArrowRight"
+            ) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                movePointer(event.key);
+
+            }
+
+
+            if (event.key === "Enter") {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                interact();
+            }
+        },
+        true
+    );
+
+    window.addEventListener(
+        "load",
+        function () {
+
+            if (window.innerWidth <= 600) {
+                pointer.style.display = "none";
+                return;
+            }
+
+            pointer.style.display = "block";
+
+            x = window.innerWidth / 2;
+            y = window.innerHeight / 2;
+
+            renderPointer();
+        }
+    );
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth <= 600) {
+
+                pointer.style.display = "none";
+
+                return;
+            }
+
+            pointer.style.display = "block";
+
+            x = Math.min(
+                x,
+                window.innerWidth - 10
+            );
+
+            y = Math.min(
+                y,
+                window.innerHeight - 10
+            );
+
+            renderPointer();
+        }
+    );
+
+})();

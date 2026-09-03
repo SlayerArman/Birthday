@@ -507,3 +507,52 @@ body {
     margin-inline: auto;
     line-height: 1.75;
 }
+
+html,
+body,
+button,
+a {
+    cursor: none !important;
+}
+
+@media (min-width: 601px) {
+
+    html,
+    body,
+    *,
+    *::before,
+    *::after {
+        cursor: none !important;
+    }
+
+    .keyboard-pointer {
+        position: fixed;
+        left: 50vw;
+        top: 50vh;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        border: 3px solid #fff;
+        box-shadow:
+            0 0 0 3px rgba(200, 92, 120, 0.25),
+            0 0 20px rgba(200, 92, 120, 0.75);
+        transform: translate(-50%, -50%);
+        z-index: 999999;
+        pointer-events: none;
+        transition:
+            transform 80ms ease,
+            box-shadow 80ms ease;
+    }
+
+    .keyboard-pointer.is-pressed {
+        transform:
+            translate(-50%, -50%)
+            scale(0.7);
+    }
+
+    .keyboard-pointer-hover {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 5px;
+    }
+}

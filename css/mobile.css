@@ -204,6 +204,10 @@
         margin: 0 auto 1.5rem;
         object-fit: contain;
     }
+
+    .keyboard-pointer{
+        display: none !important;
+    }
 }
 
 @media (prefers-reduced-motion: reduce){
