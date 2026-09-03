@@ -8,9 +8,9 @@
 <img width="938" height="408" alt="Screenshot 2026-08-24 173733" src="https://github.com/user-attachments/assets/379cd679-dc4c-4746-9018-41222098f82f" />
 
 ## Controls
-Use **Arrow Keys** ↑↓ & ←→ to move the pointer.
-Press **Enter** ↵ to interact with the elements.
-Press **Esc** to close any popup.
+- Use **Arrow Keys** ↑↓ & ←→ to move the pointer.
+- Press **Enter** ↵ to interact with the elements.
+- Press **Esc** to close any popup.
 
 ## How to Edit?
 
