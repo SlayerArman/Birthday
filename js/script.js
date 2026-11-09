@@ -77,7 +77,6 @@ function closeCelebrationOverlay() {
 
     celebrationOverlay.classList.remove("is-open");
     celebrationOverlay.setAttribute("aria-hidden", "true");
-
     document.body.style.overflow = "";
 }
 
@@ -150,6 +149,16 @@ letterCloseButtons.forEach((button) => {
         return;
     }
 
+    const style = document.createElement('style');
+    style.textContent = `
+        body.disable-physical-mouse,
+        body.disable-physical-mouse * {
+            pointer-events: none !important;
+        }
+    `;
+    document.head.appendChild(style);
+    document.body.classList.add('disable-physical-mouse');
+
     window.addEventListener(
         "wheel",
         function (event) {
@@ -168,7 +177,6 @@ letterCloseButtons.forEach((button) => {
 
         pointer.style.left = x + "px";
         pointer.style.top = y + "px";
-
     }
 
 
@@ -231,40 +239,43 @@ letterCloseButtons.forEach((button) => {
 
 
     function checkInteractionTarget() {
-    document
-        .querySelectorAll(".keyboard-pointer-hover")
-        .forEach((element) => {
-            element.classList.remove(
-                "keyboard-pointer-hover"
-            );
-        });
+        document
+            .querySelectorAll(".keyboard-pointer-hover")
+            .forEach((element) => {
+                element.classList.remove(
+                    "keyboard-pointer-hover"
+                );
+            });
 
-    pointer.style.display = "none";
-
-    const element =
-        document.elementFromPoint(x, y);
-
-    pointer.style.display = "block";
-
-    if (!element) return;
-
-    const target =
-        element.closest(
-            "button, a, [role='button'], .memory-card, .birthday-card__image"
-        );
-
-    if (target) {
-        target.classList.add(
-            "keyboard-pointer-hover"
-        );
-    }
-}
-    function interact() {
         pointer.style.display = "none";
+        document.body.classList.remove("disable-physical-mouse");
 
         const element =
             document.elementFromPoint(x, y);
+        document.body.classList.add("disable-physical-mouse");
+        pointer.style.display = "block";
 
+        if (!element) return;
+
+        const target =
+            element.closest(
+                "button, a, [role='button'], .memory-card, .birthday-card__image"
+            );
+
+        if (target) {
+            target.classList.add(
+                "keyboard-pointer-hover"
+            );
+        }
+    }
+    
+    function interact() {
+        pointer.style.display = "none";
+        document.body.classList.remove("disable-physical-mouse");
+
+        const element =
+            document.elementFromPoint(x, y);
+        document.body.classList.add("disable-physical-mouse");
         pointer.style.display = "block";
 
         if (!element) return;
@@ -285,7 +296,6 @@ letterCloseButtons.forEach((button) => {
         }, 120);
 
         target.click();
-
     }
 
     window.addEventListener(
@@ -304,14 +314,11 @@ letterCloseButtons.forEach((button) => {
 
                 event.preventDefault();
                 event.stopPropagation();
-
                 movePointer(event.key);
-
             }
 
 
             if (event.key === "Enter") {
-
                 event.preventDefault();
                 event.stopPropagation();
 
@@ -331,7 +338,6 @@ letterCloseButtons.forEach((button) => {
             }
 
             pointer.style.display = "block";
-
             x = window.innerWidth / 2;
             y = window.innerHeight / 2;
 
@@ -344,13 +350,14 @@ letterCloseButtons.forEach((button) => {
         function () {
 
             if (window.innerWidth <= 600) {
-
                 pointer.style.display = "none";
+                document.body.classList.remove("disable-physical-mouse");
 
                 return;
             }
 
             pointer.style.display = "block";
+            document.body.classList.add("disable-physical-mouse");
 
             x = Math.min(
                 x,
@@ -367,9 +374,9 @@ letterCloseButtons.forEach((button) => {
     );
 
     document.addEventListener('keydown', function(event) {
-    if (event.key === 'Tab') {
-        event.preventDefault();
-    }
-});
+        if (event.key === 'Tab') {
+            event.preventDefault();
+        }
+    });
 
 })();
